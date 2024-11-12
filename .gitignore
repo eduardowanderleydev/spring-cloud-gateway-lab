@@ -1,0 +1,23 @@
+#.gitignore for java
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.ids
+**/target/
+
+# logs
+/stacktrace.log
+/test/reports
+/logs
+*.log
+*.log.*
+
+## .gitignore for intellij
+*.iml
+*.ipr
+*.iws
+*.ids
+.idea/
