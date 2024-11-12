@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ordinary-service
+server:
+  port: 8081

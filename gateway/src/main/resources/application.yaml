@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id : ordinary-service-route
+          uri : ${ORDINARY_SERVICE_URI:http://localhost:8081}
+          predicates:
+#            - Query=any
+#            - Method=GET,POST
+#            - Header=X-Request-Id, \d+
+            - Path=/greetings/**
+          filters:
+#            - RedirectTo=302, https://spring.io
+            - PrefixPath=/api
+            - AddResponseHeader=X-Powered-by,Eduardo Gateway Service
+            - AddRequestHeadersIfNotPresent=X-Request-service-id:ordinary
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway
