@@ -13,4 +13,13 @@ public class OrdinaryController {
         return "Hello!";
     }
 
+    @GetMapping("/hello-postman")
+    public String helloPostman() {
+        return "Hello Postman!";
+    }
+
+    @GetMapping("/hello-browser")
+    public String helloBrowser() {
+        return "Hello Browser!";
+    }
 }

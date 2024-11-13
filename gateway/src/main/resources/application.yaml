@@ -16,7 +16,11 @@ spring:
             - PrefixPath=/api
             - AddResponseHeader=X-Powered-by,Eduardo Gateway Service
             - AddRequestHeadersIfNotPresent=X-Request-service-id:ordinary
-
+            - name: UserAgent
+              args:
+                shouldRedirect : true
+                postmanUrl : ${ORDINARY_SERVICE_URI:http://localhost:8081}/api/greetings/hello-postman
+                browserUrl : ${ORDINARY_SERVICE_URI:http://localhost:8081}/api/greetings/hello-browser
 management:
   endpoint:
     gateway:
